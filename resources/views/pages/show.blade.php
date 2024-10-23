@@ -1,12 +1,15 @@
 @extends("layouts.app")
 
-@section("page-title", "hello")
+@section("page-title", "Show Page")
 
 @section("main-content")
 
+    <h2 class="text-center py-3">Single Comic Overview</h2>
+
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-8 card m-auto">
+                <img class="w-50 m-auto py-3" src="{{ $comic["thumb"] }}" alt="{{ $comic["title"] }}">
                 <ul>
                     <li>
                         Titolo: {{ $comic["title"] }}
@@ -25,9 +28,6 @@
                     </li>
                     <li>
                         Descrizione: {{ $comic["description"] }}
-                    </li>
-                    <li>
-                        Url immagine: {{ $comic["thumb"] }}
                     </li>
                 </ul>
             </div>

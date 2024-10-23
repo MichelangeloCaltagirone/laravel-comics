@@ -5,12 +5,18 @@
 @section("main-content")
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                @foreach ($comicsList as $comic)
+        <div class="row justify-content-around">
+            @foreach ($comicsList as $index => $comic)
+
+            <div class="col-3 card m-2">
+                <img class="w-50 m-auto py-3" src="{{ $comic["thumb"] }}" alt="{{ $comic["title"] }}">
                 <ul>
                     <li>
-                        Titolo: {{ $comic["title"] }}
+                        Titolo:
+                        <a href="{{ route("comic.show", $index) }}">
+                            {{ $comic["title"] }}
+                        </a>
+
                     </li>
                     <li>
                         Tipo: {{ $comic["type"] }}
@@ -24,15 +30,9 @@
                     <li>
                         Prezzo: {{ $comic["price"] }}
                     </li>
-                    <li>
-                        Descrizione: {{ $comic["description"] }}
-                    </li>
-                    <li>
-                        Url immagine: {{ $comic["thumb"] }}
-                    </li>
                 </ul>
-                @endforeach
             </div>
+            @endforeach
         </div>
     </div>
 
