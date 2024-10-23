@@ -21,5 +21,5 @@ Route::get('/', function () {
 Route::get('/{index}', function (string $index){
     $comics = config("db.comics");
     $comic = $comics[$index];
-    return view('pages.show');
-});
+    return view('pages/show', compact("comic"));
+})->name("comic.show");
