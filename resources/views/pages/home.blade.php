@@ -4,6 +4,8 @@
 
 @section("main-content")
 
+    <h1 class="text-center text-primary">Comics List Example</h1>
+
     <div class="container">
         <div class="row justify-content-around">
             @foreach ($comicsList as $index => $comic)
@@ -16,7 +18,6 @@
                         <a href="{{ route("comic.show", $index) }}">
                             {{ $comic["title"] }}
                         </a>
-
                     </li>
                     <li>
                         Tipo: {{ $comic["type"] }}
